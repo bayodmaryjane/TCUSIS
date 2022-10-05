@@ -1,0 +1,77 @@
+.col1 {
+    float: left;
+    width: 50%;
+  }
+
+  .tcu {
+    width: 125%;
+    height: 775px;
+  }
+
+  .col2{
+    float: right;
+    background-color: rgba(120, 0, 0, 1);
+    width: 593px;
+    height: 775px; 
+  } 
+
+ h2{
+    text-align: left;
+    font-size: 14px;
+    padding-left: 115px;
+    color: white;
+  }
+
+  h1  {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 150px;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif
+   
+  }
+    
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .row {
+    text-align: center;
+  }
+
+  input[type="text"],input[type="password"]{
+  
+    height: 35px;
+    width: 350px;
+    font-size: 12px;
+    color: #780000;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border-style: none;
+    font-weight: bold;
+  }
+  input[type="text"]::placeholder, input[type="password"]::placeholder {
+          
+    /* Firefox, Chrome, Opera */
+    color: #780000;
+    font-size: 14px;
+}
+
+  button{
+    text-align: center;
+    padding: 15px 25px;
+    font-size: 16px;
+	  border: 2px white;
+    font-weight: bold;
+	  background-color: white;
+    color: #780000;
+
+    border-radius: 10px;
+    border-color: white;
+
+  }
