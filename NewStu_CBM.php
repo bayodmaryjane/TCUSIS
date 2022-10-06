@@ -1,3 +1,38 @@
+<?php
+    
+    //session_start();
+
+    //connect to database
+    $db = mysqli_connect("localhost", "root", "", "tcusis");
+
+    if (isset($_POST['save'])) {
+        session_start();
+        $id = $_POST['id'];
+        $year = $_POST['year'];
+        $academic_year = $_POST['academic_year'];
+        $lastname = $_POST['lastname'];
+        $firstname = $_POST['firstname'];
+        $midname = $_POST['midname'];
+        $address = $_POST['address'];
+        $birthdate = $_POST['birthdate'];
+        $email = $_POST['email'];
+        $mobilenum = $_POST['mobilenum'];
+        $gender = $_POST['gender'];
+        $nationality = $_POST['nationality'];
+        $course = $_POST['course'];
+        $status = $_POST['status'];
+        $password = $_POST['password'];
+        
+        
+            
+        $sql = "INSERT INTO cbm_students(id,year,academic_year,lastname,firstname,midname,address,birthdate,email,mobilenum,gender,nationality,course,status,password)
+        VALUES('$id','$year','$academic_year','$lastname','$firstname','$midname','$address','$birthdate','$email','$mobilenum','$gender','$nationality','$course','$status','$password')";
+            
+        mysqli_query($db, $sql);
+        
+    }
+?>
+
 <!DOCTYPE html>
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
@@ -110,7 +145,7 @@
 	 <div class="container">
         <header>Add New Student</header>
 
-        <form action="#">
+        <form method="post" action="NewStu_CBM.php">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
@@ -118,12 +153,12 @@
                     <div class="fields">
 					 <div class="input-field">
                             <label>Student ID </label>
-                            <input type="text" name="studID" placeholder="Enter your Student ID" required>
+                            <input type="text" name="id" placeholder="Enter your Student ID" required>
                         </div>
 					
 					  <div class="input-field">
                             <label>Semester</label>
-                            <select name="semester" required>
+                            <select name="year" required>
                                 <option value="" disabled selected>Select semester</option>
                                 <option value="1st">1st Semester</option>
                                 <option value="2nd">2nd Semester</option>
@@ -165,12 +200,12 @@
 
                         <div class="input-field">
                             <label>Date of Birth</label>
-                            <input type="date" name="studBirthdate" placeholder="Enter birth date" required>
+                            <input type="date" name="birthdate" placeholder="Enter birth date" required>
                         </div>
 
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="text" name="studEmail" placeholder="Enter your email" required>
+                            <input type="text" name="email" placeholder="Enter your email" required>
                         </div>
 
                         <div class="input-field">
@@ -230,22 +265,22 @@
 						
 						  <div class="input-field">
                             <label>Password</label>
-                            <input type="text" name="studPass" placeholder="Create password for student" >
+                            <input type="text" name="password" placeholder="Create password for student" >
                         </div>
 					
                     </div>
                 </div>
-
-						<button class="sumbit">
-                            <span name="addStud_btn" class="btnText">SAVE</span>
+						<button type="sumbit" name="save">
+                            <span name="save" class="btnText">SAVE</span>
                             <i class="uil uil-navigator"></i>
                         </button>
                 </div> 
-            </div>
+            </form>
+        </div>
 
 
-        </form>
-    </div>
+        
+    
 
   </section>
 
