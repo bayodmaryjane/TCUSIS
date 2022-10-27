@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> TCUSIS- Professor Add Grades </title>
+    <link rel="stylesheet" href="facCriteria_style.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- add icon link -->
+        <link rel="icon" href="Images/tculogo.jpg" type="image/x-icon">
+   </head>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='logo'><a href="#"><img src="Images/logo.png"></a></i>
+      <span class="logo_name">TCUSIS</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Dashboard</a></li>
+        </ul>
+      </li>
+	  <li>
+        <a href="#">
+          <i class='bx bx-plus' ></i>
+          <span class="link_name">Sections</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Sections</a></li>
+      </ul>
+      </li>
+      <li>
+  
+  </li>
+</ul>
+  </div>
+	
+	<!--  <li>
+        <a href="admin_course.html">
+          <i class='bx bx-log-out' ></i>
+          <span class="link_name">Logout</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Logout</a></li>
+        </ul>
+      </li>-->
+      <section class="home-section">
+	  <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">Student Grades</span>
+    </div>
+		<div class="table">
+			
+					<button class="add_new">+ Set Grades</button>
+					</div>
+			
+				<div class="table_section">
+					<table>
+						<thead>
+							<tr>
+								<th>Student No.</th>
+								<th>Student Name</th>
+								<th>Subject</th>
+								<th>Midterm</th>
+								<th>Finals</th>
+								<th>Final Grades</th>
+								<th>Remarks</th>
+								<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>shshhshshs</td>
+									<td></td>
+									<td>
+									<button type="sumbit"  onclick="openPopup()" name="save" class="btn-Save">
+										EDIT	</button>
+									</td>
+									</tbody>
+</table>
+</div>
+    </section>
+	
+	
+	<div class="popup" id="popup">
+		
+		<form action="" class="">
+			<h1>Edit Student Grades</h1>
+			
+			 <div class="input-field">
+               <label>Student No.</label>
+               <input type="text" name="stud#">
+            </div>
+		
+			 <div class="input-field">
+               <label>Student Name</label>
+               <input type="text" name="studName">
+            </div>
+			
+			 <div class="input-field">
+               <label>Subject</label>
+               <input type="text" name="subject">
+            </div>
+			
+				<div class="input-field">
+                   <label>Midterm</label>
+                   <select name="midterm" required>
+                   <option  disabled selected>Select Midterm Grade</option>
+                   <option value="1.00">1.00</option>
+				   <option value="1.25">1.25</option>
+				   <option value="1.50">1.50</option>
+				   <option value="1.75">1.75</option>
+				   <option value="2.00">2.00</option>
+				   <option value="2.25">2.25</option>
+				   <option value="2.50">2.50</option>
+				   <option value="2.75">2.75</option>
+				   <option value="3.00">3.00</option>
+				   <option value="5.00">5.00</option>
+				   <option value="F">Failed</option>
+				   <option value="INC">Incomplete</option>
+				   <option value="UD">Unofficially Drop</option>
+                 </select>
+                 </div>
+
+				<div class="input-field">
+                   <label>Finals</label>
+                   <select name="finals" required>
+                   <option  disabled selected>Select Finals Grade</option>
+                   <option value="1.00">1.00</option>
+				   <option value="1.25">1.25</option>
+				   <option value="1.50">1.50</option>
+				   <option value="1.75">1.75</option>
+				   <option value="2.00">2.00</option>
+				   <option value="2.25">2.25</option>
+				   <option value="2.50">2.50</option>
+				   <option value="2.75">2.75</option>
+				   <option value="3.00">3.00</option>
+				   <option value="5.00">5.00</option>
+				   <option value="F">Failed</option>
+				   <option value="INC">Incomplete</option>
+				   <option value="UD">Unofficial Drop</option>
+                 </select>
+                 </div>
+				 
+				 <div class="input-field">
+                   <label>Finals Grade</label>
+                   <select name="midterm" required>
+                   <option  disabled selected>Select Finals Grade</option>
+                   <option value="1.00">1.00</option>
+				   <option value="1.25">1.25</option>
+				   <option value="1.50">1.50</option>
+				   <option value="1.75">1.75</option>
+				   <option value="2.00">2.00</option>
+				   <option value="2.25">2.25</option>
+				   <option value="2.50">2.50</option>
+				   <option value="2.75">2.75</option>
+				   <option value="3.00">3.00</option>
+				   <option value="5.00">5.00</option>
+				   <option value="F">Failed</option>
+				   <option value="INC">Incomplete</option>
+				   <option value="UD">Unofficial Drop</option>
+                 </select>
+                 </div>
+				 
+			 <div class="input-field">
+               <label>Remarks</label>
+               <input type="text" name="remarks">
+            </div>
+				 
+				 
+
+			<button type="button" class="Save" id="close" onclick="closeForm()">Save</button>
+  </form>
+</div>
+
+
+		<script>
+			 let popup = document.getElementById("popup");
+        
+        function openPopup(){
+            popup.classList.add("open-popup");
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+		
+		function toggle(){
+    
+		var popup = document.getElementById("popup");
+		popup.classList.toggle('active')
+	}
+		</script>
+  </body>
+  </html>
