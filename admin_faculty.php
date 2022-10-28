@@ -33,34 +33,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> TCU Admin Dashboard </title>
-    <link rel="stylesheet" href="NewStu_style.css">
+    <link rel="stylesheet" href="admin_faculty_style.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- add icon link -->
         <link rel="icon" href="Images/tculogo.jpg" type="image/x-icon">
-    <style>
-        .popup{
-            width: 700px;
-            background: #fff;
-            border-radius: 6px;
-            position: absolute
-            top: 0%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.1);
-            text-align: center;
-            padding: 0 30px 30px;
-            color: #333;
-            visibility: hidden;        
-        }
-        .open-popup{
-            visibility: visible;
-            top: 50%;
-            transform: translate(-50%,-50%) scale(1);
-        }
-      
-    </style>   
 
    </head>
+   
 <body>
   <div class="sidebar close">
     <div class="logo-details">
@@ -156,149 +136,185 @@
           <li><a class="link_name" href="#">Logout</a></li>
         </ul>
       </li>
-      <li>
-  
-  </li>
-</ul>
+    </ul>
   </div>
-<script src="NewSty.js"></script>    
-<div>
-    <header><h1>List of Faculty</h1></header>
-    <br>
     
-    <table class="table">
-        <thead>
-			<tr>
-				<th>Faculty ID</th>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Department</th>
-				<th>Username</th>
-                <th>Password</th>
-				<th>Action</th>
-			</tr>
-            
-		</thead>
-        
-        
-        <button class="addfaculty" name="addfaculty" onclick="openPopup()"> Add Faculty Account </button>
-        
-        
-        
-        
-        
-        
-        
-        
-        <div class="popup" id="popup">
-        
-            <form method="post" action="admin_faculty.php">
-            <div class="form first">
-                <div class="details personal">
-                    <span class="title">Add Faculty Account</span>
+    <script src="NewSty.js"></script>    
 
-
-					
-                        <div class="input-field">
-                            <label>Name</label>
-                            <input type="text" name="name" placeholder="Enter Your Full Name" required>
-                        </div>
-						
-						 <div class="input-field">
-                            <label>Email</label>
-                            <input type="text" name="email" placeholder="Enter Email Address" required>
-                        </div>
-                    
-                    <div class="input-field">
-                            <label>Department</label>
-                            <select name="department" required>
-                        
-                                <option value="" disabled selected>Select Department</option>
-                                
-                                <option value="BSCS">College of Information and Communication Technology</option>
-                                
-                                <option value="CBM">College of Business and Management</option>
-        
-                            </select>
-                        </div>
-						
-						 <div class="input-field">
-                            <label>Username</label>
-                            <input type="text" name="username" placeholder="Enter Username" required>
-                        </div>
-                        <div class="input-field">
-                            <label>Password</label>
-                            <input type="password" name="password" placeholder="Enter Password" required>
-                        </div>
-                    </div>
-                
-                <button type="sumbit" name="save">
-                            <span name="save" class="btnText">SAVE</span>
-                            <i class="uil uil-navigator"></i>
-                    </button>
-                
-                <button type="button" onclick="closePopup()"> Close </button>
-            </div>
-        </form>
-            
-            
-        </div>
-        
-
-            
-        
-        
-        
-        
-        
-        
-            
-        <tbody>
-            <?php
-            $servername = "localhost";
-			$username = "root";
-			$password = "";
-			$database = "tcusis";
-
-			// Create connection
-			$connection = new mysqli($servername, $username, $password, $database);
-
-            // Check connection
-			if ($connection->connect_error) {
-				die("Connection failed: " . $connection->connect_error);
-			}
-
-            // read all row from database table
-			$sql = "SELECT * FROM admin_faculty";
-			$result = $connection->query($sql);
-
-            if (!$result) {
-				die("Invalid query: " . $connection->error);
-			}
-
-            // read data of each row
-			while($row = $result->fetch_assoc()) {
-                echo "<tr>
-                    <td>" . $row["faculty_id"] . "</td>
-                    <td>" . $row["name"] . "</td>
-                    <td>" . $row["email"] . "</td>
-                    <td>" . $row["department"] . "</td>
-                    <td>" . $row["username"] . "</td>
-                    <td>" . $row["password"] . "</td>
-                    <td>
-                        <a class='btn btn-primary btn-sm' href='update'>Edit</a>
-                        <a class='btn btn-danger btn-sm' href='delete'>Delete</a>
-                    </td>
-                </tr>";
-            }
-
-            $connection->close();
-            ?>
-        </tbody>
-    </table>
+     <section class="home-section">
+	  <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">List of Faculty</span>
     </div>
+   
+
+            <!-- POPUP -->
+            <button class="addfaculty" name="addfaculty" onclick="openPopup()"> Add Faculty Account </button>
+
+<br>
+
+            <div class="popup" id="popup">
+
+                <form method="post" action="admin_faculty.php">
+                <div class="form first">
+                    <div class="details personal">
+                      <h1>Add Faculty Account</h1>
+
+                            <div class="input-field">
+                                <label>Name</label>
+                                <input type="text" name="name" placeholder="Enter Your Full Name" required>
+                            </div>
+
+                             <div class="input-field">
+                                <label>Email</label>
+                                <input type="text" name="email" placeholder="Enter Email Address" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Department</label>
+                                <select name="department" required>
+
+                                    <option value="" disabled selected>Select Department</option>
+                                    <option value="CICT">College of Information and Communication Technology</option>
+                                    <option value="CBM">College of Business and Management</option>
+
+                                </select>
+                            </div>
+
+                             <div class="input-field">
+                                <label>Username</label>
+                                <input type="text" name="username" placeholder="Enter Username" required>
+                            </div>
+                        
+                            <div class="input-field">
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="Enter Password" required>
+                            </div>
+                        
+                        <button type="sumbit" name="save"> Save </button>
+
+                        <button type="button" onclick="closePopup()"> Close </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+             <!-- POPUP end -->
+        
+            <!-- POPUP EDIT -->
+            <div class="popupEdit" id="popupEdit">
+
+                <form method="post" action="admin_faculty.php">
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Edit Faculty Account</span>
+
+                            <div class="input-field">
+                                <label>Name</label>
+                                <input type="text" name="name" placeholder="Enter Your Full Name" required>
+                            </div>
+
+                             <div class="input-field">
+                                <label>Email</label>
+                                <input type="text" name="email" placeholder="Enter Email Address" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Department</label>
+                                <select name="department" required>
+
+                                    <option value="" disabled selected>Select Department</option>
+                                    <option value="CICT">College of Information and Communication Technology</option>
+                                    <option value="CBM">College of Business and Management</option>
+
+                                </select>
+                            </div>
+
+                             <div class="input-field">
+                                <label>Username</label>
+                                <input type="text" name="username" placeholder="Enter Username" required>
+                            </div>
+                        
+                            <div class="input-field">
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="Enter Password" required>
+                            </div>
+                        
+                        <button type="sumbit" name="save"> Save </button>
+
+                        <button type="button" onclick="closePopupEdit()"> Close </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+             <!-- POPUP end -->
+
+
+            <!-- TABLE - LIST OF FACULTY -->   
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Faculty ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Username</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $database = "tcusis";
+
+                    // Create connection
+                    $connection = new mysqli($servername, $username, $password, $database);
+
+                    // Check connection
+                    if ($connection->connect_error) {
+                        die("Connection failed: " . $connection->connect_error);
+                    }
+
+                    // read all row from database table
+                    $sql = "SELECT * FROM admin_faculty";
+                    $result = $connection->query($sql);
+
+                    if (!$result) {
+                        die("Invalid query: " . $connection->error);
+                    }
+
+                    // read data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                            <td>" . $row["faculty_id"] . "</td>
+                            <td>" . $row["name"] . "</td>
+                            <td>" . $row["email"] . "</td>
+                            <td>" . $row["department"] . "</td>
+                            <td>" . $row["username"] . "</td>
+                            <td>
+                                <button class='addfaculty' name='addfaculty' onclick='openPopupEdit()'> Edit</button>
+                                <a class='btn btn-danger btn-sm' href='delete'>Delete</a>
+                            </td>
+                        </tr>";
+                    }
+
+                    $connection->close();
+                    ?>
+
+                </tbody>
+                <!-- TABLE - LIST OF FACULTY end -->
+
+        </table>
+
+    </div>
+  </section>  
     
+    <!-- POPUP javascript -->
     <script>
+        
+        //add account
         let popup = document.getElementById("popup");
         
         function openPopup(){
@@ -307,10 +323,19 @@
         function closePopup(){
             popup.classList.remove("open-popup");
         }
-    
+        
+        //edit account
+        let popupEdit = document.getElementById("popupEdit");
+        
+        function openPopupEdit(){
+            popupEdit.classList.add("open-popupEdit");
+        }
+        function closePopupEdit(){
+            popupEdit.classList.remove("open-popupEdit");
+        }
     
     </script>
-    
+    <!-- POPUP javascript end -->
     
     
 </body>
