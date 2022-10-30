@@ -33,37 +33,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> TCU Admin Dashboard </title>
-    <link rel="stylesheet" href="NewStu_style.css">
+    <link rel="stylesheet" href="admin_users_style.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- add icon link -->
-        <link rel="icon" href="Images/tculogo.jpg" type="image/x-icon">
-    
-      
-      <!-- POPUP CSS -->
-      <style>
-        .popup{
-            width: 700px;
-            background: #fff;
-            border-radius: 6px;
-            position: absolute;
-            top: 0%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.1);
-            
-            padding: 30px;
-            color: #333;
-            visibility: hidden;    
-            transition: transform 0.4s, top 0.4s;
-        }
-        .open-popup{
-            visibility: visible;
-            top: 50%;
-            transform: translate(-50%,-50%) scale(1);
-        }
-    </style>        
+        <link rel="icon" href="Images/tculogo.jpg" type="image/x-icon">     
 
    </head>
+   
 <body>
   <div class="sidebar close">
     <div class="logo-details">
@@ -167,10 +144,13 @@
     <script src="NewSty.js"></script>
     
 
-    <div>
-        <header><h1>List of Users</h1></header>
-        <br>
-
+	 <section class="home-section">
+	  <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">List of Users</span>
+    </div>
+   
+       
 
             <!-- POPUP -->
             <button class="addfaculty" name="addfaculty" onclick="openPopup()"> Add User Account </button>
@@ -179,7 +159,7 @@
                 <form method="post" action="admin_users.php">
                     <div class="form first">
                         <div class="details personal">
-                            <span class="title">Add User Account</span>
+                            <h1 class="title">Add User Account</h1>
 
                                 <div class="input-field">
                                     <label>Name</label>
@@ -212,9 +192,9 @@
                                 </div>
                             </div>
 
-                        <button type="sumbit" name="save"> SAVE </button>
+                        <button  class="save" type="sumbit" name="save"> SAVE </button>
 
-                        <button type="button" onclick="closePopup()"> Close </button>
+                        <button style="color:black; background-color:#fff; border:1.5px solid #aaa;" type="button" onclick="closePopup()"> Close </button>
 
                     </div>
                 </form>
@@ -278,6 +258,7 @@
                 </tbody>
             </table>
     </div>
+	 </section> 
     
     <!-- POPUP javascript -->
     <script>

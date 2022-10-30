@@ -239,9 +239,9 @@
                                 <input type="password" name="password" placeholder="Enter Password" required>
                             </div>
                         
-                        <button type="sumbit" name="save"> Save </button>
+                        <button class="save"  type="sumbit" name="save"> Save </button>
 
-                        <button type="button" onclick="closePopupEdit()"> Close </button>
+                        <button class="close"  type="button" onclick="closePopupEdit()"> Close </button>
                     </div>
                 </div>
             </form>
@@ -307,8 +307,8 @@
                 <!-- TABLE - LIST OF FACULTY end -->
 
         </table>
-
-    </div>
+	
+	</div>
   </section>  
     
     <!-- POPUP javascript -->
