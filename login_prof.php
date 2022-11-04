@@ -5,15 +5,15 @@ $db = mysqli_connect("localhost", "root", "", "tcusis");
 if(isset($_POST['login'])){
     session_start();
     
-    $id = $_POST['id'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
     
-    $sql = "SELECT * FROM cbm_students WHERE id='$id' AND password='$password'";
+    $sql = "SELECT * FROM admin_faculty WHERE username='$username' AND password='$password'";
     $result = mysqli_query($db, $sql);
     
     if (mysqli_num_rows($result) == 1){
         $_SESSION['message'] = "You are now logged in";
-        header("location: student_dashboard.html");
+        header("location: faculty_dashboard.html");
     }else{
         $_SESSION['message'] = "Incorrect id/password";
     }
@@ -21,6 +21,9 @@ if(isset($_POST['login'])){
 
 
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +33,7 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="loginprof_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>Login Student Panel</title>
+    <title>Login Faculty Panel</title>
 </head>
 <body>
     <section class="side">
@@ -39,13 +42,13 @@ if(isset($_POST['login'])){
 
     <section class="main">
         <div class="login-container">
-            <p class="title">TCUSIS Student Login Portal</p>
+            <p class="title">TCUSIS Faculty Login Portal</p>
             <div class="separator"></div>
             <p class="welcome-message">Please, provide login credential to proceed and have access to all our services.</p>
 
-            <form class="login-form" method="post" action="student_login.php">
+            <form class="login-form" method="post" action="login_prof.php">
                 <div class="form-control">
-                    <input type="text" placeholder="Username" name="id"> 
+                    <input type="text" placeholder="username" name="username"> 
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="form-control">

@@ -1,3 +1,28 @@
+<?php
+    
+    //session_start();
+
+    //connect to database
+    $db = mysqli_connect("localhost", "root", "", "tcusis");
+
+    if (isset($_POST['postAnnouncement'])) {
+        session_start();
+        
+        $title = $_POST['title'];
+        $body = $_POST['body'];
+
+        
+            
+        $sql = "INSERT INTO cbm_announcement(title,body)
+        
+        VALUES('$title', '$body)";
+            
+        mysqli_query($db, $sql);
+        
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -28,12 +53,12 @@
         </ul>
       </li>
 	  <li>
-        <a href="#">
+        <a href="NewStu_CBM.php">
           <i class='bx bx-plus' ></i>
           <span class="link_name">New Student</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">New Student</a></li>
+          <li><a class="link_name" href="NewStu_CBM.php">New Student</a></li>
         </ul>
       </li>
 	   <li>
@@ -46,7 +71,7 @@
         </ul>
       </li>
 	  <li>
-        <a href="#">
+        <a href="admin_postAnnounce.php">
           <i class='bx bxs-microphone' ></i>
           <span class="link_name">Announcement</span>
         </a>
@@ -112,10 +137,10 @@
         <header>Post New Announcement</header>
 		
 		
-		<div> </div>
+		
 		
 
-        <form action="#">
+        <form method="post" action="admin_postAnnounce.php">
             <div class="form first">
                 <div class="details personal">
 
@@ -136,12 +161,12 @@
                     
                 </div>
 
-						<button class="sumbit">
-                            <span name="addStud_btn" class="btnText">SAVE</span>
+						<button type="sumbit" name="postAnnouncement">
+                            <span name="postAnnouncement" class="btnText">POST</span>
                             <i class="uil uil-navigator"></i>
                         </button>
                 </div> 
-            </div>
+            
 
 
         </form>

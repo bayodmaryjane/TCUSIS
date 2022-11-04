@@ -5,15 +5,15 @@ $db = mysqli_connect("localhost", "root", "", "tcusis");
 if(isset($_POST['login'])){
     session_start();
     
-    $id = $_POST['id'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
     
-    $sql = "SELECT * FROM cbm_students WHERE id='$id' AND password='$password'";
+    $sql = "SELECT * FROM admin_users WHERE username='$username' AND password='$password'";
     $result = mysqli_query($db, $sql);
     
     if (mysqli_num_rows($result) == 1){
         $_SESSION['message'] = "You are now logged in";
-        header("location: student_dashboard.html");
+        header("location: admin_faculty.php");
     }else{
         $_SESSION['message'] = "Incorrect id/password";
     }
@@ -33,19 +33,15 @@ if(isset($_POST['login'])){
     <title>Login Student Panel</title>
 </head>
 <body>
-    <section class="side">
-        <img class="tcu" src="Images\tcu.png" alt="">
-    </section>
-
     <section class="main">
         <div class="login-container">
-            <p class="title">TCUSIS Student Login Portal</p>
+            <p class="title">TCUSIS Admin Login Portal</p>
             <div class="separator"></div>
             <p class="welcome-message">Please, provide login credential to proceed and have access to all our services.</p>
 
-            <form class="login-form" method="post" action="student_login.php">
+            <form class="login-form" method="post" action="admin_login.php">
                 <div class="form-control">
-                    <input type="text" placeholder="Username" name="id"> 
+                    <input type="text" placeholder="Username" name="username"> 
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="form-control">

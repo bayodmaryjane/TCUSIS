@@ -39,6 +39,28 @@
     <!-- add icon link -->
         <link rel="icon" href="Images/tculogo.jpg" type="image/x-icon">
 
+      <!-- POPUP CSS -->
+      <style>
+        .popup{
+            width: 700px;
+            background: #fff;
+            border-radius: 6px;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            padding: 30px;
+            color: #333;
+            visibility: hidden;    
+            transition: transform 0.4s, top 0.4s;
+        }
+        .open-popup{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+        }
+    </style>
+      
    </head>
    
 <body>
@@ -149,9 +171,10 @@
    
 
             <!-- POPUP -->
+            <br>
+         
             <button class="addfaculty" name="addfaculty" onclick="openPopup()"> Add Faculty Account </button>
 
-<br>
 
             <div class="popup" id="popup">
 
@@ -200,55 +223,7 @@
             </div>
              <!-- POPUP end -->
         
-            <!-- POPUP EDIT -->
-            <div class="popupEdit" id="popupEdit">
-
-                <form method="post" action="admin_faculty.php">
-                <div class="form first">
-                    <div class="details personal">
-                        <span class="title">Edit Faculty Account</span>
-
-                            <div class="input-field">
-                                <label>Name</label>
-                                <input type="text" name="name" placeholder="Enter Your Full Name" required>
-                            </div>
-
-                             <div class="input-field">
-                                <label>Email</label>
-                                <input type="text" name="email" placeholder="Enter Email Address" required>
-                            </div>
-
-                            <div class="input-field">
-                                <label>Department</label>
-                                <select name="department" required>
-
-                                    <option value="" disabled selected>Select Department</option>
-                                    <option value="CICT">College of Information and Communication Technology</option>
-                                    <option value="CBM">College of Business and Management</option>
-
-                                </select>
-                            </div>
-
-                             <div class="input-field">
-                                <label>Username</label>
-                                <input type="text" name="username" placeholder="Enter Username" required>
-                            </div>
-                        
-                            <div class="input-field">
-                                <label>Password</label>
-                                <input type="password" name="password" placeholder="Enter Password" required>
-                            </div>
-                        
-                        <button type="sumbit" name="save"> Save </button>
-
-                        <button type="button" onclick="closePopupEdit()"> Close </button>
-                    </div>
-                </div>
-            </form>
-            </div>
-             <!-- POPUP end -->
-
-
+            
             <!-- TABLE - LIST OF FACULTY -->   
             <table class="table">
                 <thead>
@@ -294,7 +269,7 @@
                             <td>" . $row["department"] . "</td>
                             <td>" . $row["username"] . "</td>
                             <td>
-                                <button class='addfaculty' name='addfaculty' onclick='openPopupEdit()'> Edit</button>
+                                <a class='addfaculty' name='addfaculty' href='edit.php?faculty_id=$row[faculty_id]'> Edit </a>
                                 <a class='btn btn-danger btn-sm' href='delete'>Delete</a>
                             </td>
                         </tr>";
@@ -308,7 +283,7 @@
 
         </table>
 
-    </div>
+    
   </section>  
     
     <!-- POPUP javascript -->
@@ -324,15 +299,6 @@
             popup.classList.remove("open-popup");
         }
         
-        //edit account
-        let popupEdit = document.getElementById("popupEdit");
-        
-        function openPopupEdit(){
-            popupEdit.classList.add("open-popupEdit");
-        }
-        function closePopupEdit(){
-            popupEdit.classList.remove("open-popupEdit");
-        }
     
     </script>
     <!-- POPUP javascript end -->
