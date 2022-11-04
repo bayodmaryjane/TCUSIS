@@ -223,7 +223,57 @@
             </div>
              <!-- POPUP end -->
         
-            
+
+            <!-- POPUP EDIT -->
+            <div class="popupEdit" id="popupEdit">
+
+                <form method="post" action="admin_faculty.php">
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Edit Faculty Account</span>
+
+                            <div class="input-field">
+                                <label>Name</label>
+                                <input type="text" name="name" placeholder="Enter Your Full Name" required>
+                            </div>
+
+                             <div class="input-field">
+                                <label>Email</label>
+                                <input type="text" name="email" placeholder="Enter Email Address" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Department</label>
+                                <select name="department" required>
+
+                                    <option value="" disabled selected>Select Department</option>
+                                    <option value="CICT">College of Information and Communication Technology</option>
+                                    <option value="CBM">College of Business and Management</option>
+
+                                </select>
+                            </div>
+
+                             <div class="input-field">
+                                <label>Username</label>
+                                <input type="text" name="username" placeholder="Enter Username" required>
+                            </div>
+                        
+                            <div class="input-field">
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="Enter Password" required>
+                            </div>
+                        
+                        <button class="save"  type="sumbit" name="save"> Save </button>
+
+                        <button class="close"  type="button" onclick="closePopupEdit()"> Close </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+             <!-- POPUP end -->
+
+
+
             <!-- TABLE - LIST OF FACULTY -->   
             <table class="table">
                 <thead>
@@ -280,11 +330,9 @@
 
                 </tbody>
                 <!-- TABLE - LIST OF FACULTY end -->
-
-        </table>
-
-    
-  </section>  
+         </table>
+    </section>
+ 
     
     <!-- POPUP javascript -->
     <script>
