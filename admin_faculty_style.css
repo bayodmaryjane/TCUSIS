@@ -252,15 +252,7 @@ body{
   .sidebar.close{
     width: 78px;
   }
-  .sidebar .profile-details{
-    width: 240px;
-  }
-  .sidebar.close .profile-details{
-    background: none;
-  }
-  .sidebar.close .profile-details{
-    width: 78px;
-  }
+
   .home-section{
     left: 240px;
     width: calc(100% - 240px);
@@ -314,10 +306,10 @@ body{
     border-radius: 8px;
     background-color: rgba(120, 0, 0, 1);
 }
-.container form{
+.popup form{
     position: relative;
-    margin-top: 16px;
-    min-height: 490px;
+    margin-top: 10px;
+    min-height: 480px;
     background-color: #fff;
     overflow: hidden;
 	justify-content: center;
@@ -329,16 +321,7 @@ body{
     background-color: #fff;
     transition: 0.3s ease;
 }
-.container form .form.second{
-    opacity: 1;
-    pointer-events: none;
-    transform: translateX(100%);
-}
-form.secActive .form.second{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
+
 form.secActive .form.first{
     opacity: 0;
     pointer-events: none;
@@ -352,18 +335,8 @@ form.secActive .form.first{
     margin: 3px 0;
     color: #333;
 }
-.container form .fields{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-form .fields .input-field{
-    display: flex;
-    width: calc(100% / 3 - 15px);
-    flex-direction: column;
-    margin: 2px 0;
-}
+
+
 .input-field label{
     font-size: 14px;
     font-weight: 500;
@@ -452,7 +425,7 @@ button{
 	display: flex;
     align-items: center;
     justify-content: center;
-    height: 35px;
+    height: 30px;
     max-width: 150px;
     width: 100%;
     border: none;
@@ -463,6 +436,25 @@ button{
     background-color: rgba(120, 0, 0, 1);
     transition: all 0.3s linear;
     cursor: pointer;
+	 width: calc(90% / 2 - 10px);
+}
+
+.button3{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    max-width: 150px;
+   
+    border: 1px;
+    outline: none;
+    color: black;
+    border-radius: 5px;
+    margin: 5px 0;
+    background-color: #fff;
+    transition: all 0.3s linear;
+    cursor: pointer;
+	 width: calc(90% / 2 - 10px);
 }
 
 .table{
@@ -518,12 +510,6 @@ form.secActive .form.first{
     color: #333;
 }
 
-form .fields .input-field{
-    display: flex;
-    width: calc(100% / 2 - 15px);
-    flex-direction: column;
-    margin: 2px 0;
-}
 .input-field label{
     font-size: 14px;
     font-weight: 500;
@@ -572,7 +558,7 @@ form .fields .input-field{
 }
 
 .popup{
-             width: 500px;
+    width: 350px;
     background: #fff;
     border-radius: 6px;
     position: absolute;
@@ -597,7 +583,7 @@ form .fields .input-field{
 
 .popup form  .input-field{
     display: flex;
-    width: calc(100% / 2 - 10px);
+    width: calc(67% / 1 - 10px);
     flex-direction: column;
     margin: 2px 0;
 	justify-content: space-between;
@@ -627,7 +613,7 @@ form .fields .input-field{
         }
         
         .popupEdit{
-            width: 700px;
+            width: 600px;
             background: #fff;
             border-radius: 6px;
             position: absolute;
@@ -643,3 +629,13 @@ form .fields .input-field{
             top: 50%;
             transform: translate(-50%,-50%) scale(1);
         }
+	
+	a .btn{
+	display: flex;
+    width: calc(150% / 1 - 10px);
+    flex-direction: column;
+    margin: 2px 0;
+	justify-content: space-between;
+		
+	}	
+		

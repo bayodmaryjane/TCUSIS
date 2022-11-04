@@ -254,7 +254,7 @@
                 <thead>
                 <tr>
                     <th>Faculty ID</th>
-                    <th>Name</th>
+                    <th>Name</th>	
                     <th>Email</th>
                     <th>Department</th>
                     <th>Username</th>
@@ -294,9 +294,8 @@
                             <td>" . $row["department"] . "</td>
                             <td>" . $row["username"] . "</td>
                             <td>
-                                <button class='addfaculty' name='addfaculty' onclick='openPopupEdit()'> Edit</button>
-                                <a class='btn btn-danger btn-sm' href='delete'>Delete</a>
-                            </td>
+								<a class='btn btn-primary btn-sm' href='update'><i class='bx bxs-edit'style='color:#780000' ></i></a>
+                                <a class='btn btn-danger btn-sm' href='delete'><i class='bx bxs-trash' style='color:#780000'  ></i></a>                            </td>
                         </tr>";
                     }
 

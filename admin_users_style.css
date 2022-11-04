@@ -629,3 +629,13 @@ form.secActive .form.first{
             top: 50%;
             transform: translate(-50%,-50%) scale(1);
         }
+	
+	a .btn{
+	display: flex;
+    width: calc(150% / 1 - 10px);
+    flex-direction: column;
+    margin: 2px 0;
+	justify-content: space-between;
+		
+	}	
+		

@@ -247,8 +247,8 @@
                             <td>" . $row["department"] . "</td>
                             <td>" . $row["username"] . "</td>
                             <td>
-                                <a class='btn btn-primary btn-sm' href='update'>Edit</a>
-                                <a class='btn btn-danger btn-sm' href='delete'>Delete</a>
+                                <a class='btn btn-primary btn-sm' href='update'><i class='bx bxs-edit'style='color:#780000' ></i></a>
+                                <a class='btn btn-danger btn-sm' href='delete'><i class='bx bxs-trash' style='color:#780000'  ></i></a>
                             </td>
                         </tr>";
                     }
