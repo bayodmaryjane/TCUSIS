@@ -39,6 +39,28 @@
     <!-- add icon link -->
         <link rel="icon" href="Images/tculogo.jpg" type="image/x-icon">
 
+      <!-- POPUP CSS -->
+      <style>
+        .popup{
+            width: 700px;
+            background: #fff;
+            border-radius: 6px;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            padding: 30px;
+            color: #333;
+            visibility: hidden;    
+            transition: transform 0.4s, top 0.4s;
+        }
+        .open-popup{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+        }
+    </style>
+      
    </head>
    
 <body>
@@ -149,9 +171,10 @@
    
 
             <!-- POPUP -->
+            <br>
+         
             <button class="addfaculty" name="addfaculty" onclick="openPopup()"> Add Faculty Account </button>
 
-<br>
 
             <div class="popup" id="popup">
 
@@ -200,6 +223,7 @@
             </div>
              <!-- POPUP end -->
         
+
             <!-- POPUP EDIT -->
             <div class="popupEdit" id="popupEdit">
 
@@ -249,6 +273,7 @@
              <!-- POPUP end -->
 
 
+
             <!-- TABLE - LIST OF FACULTY -->   
             <table class="table">
                 <thead>
@@ -294,8 +319,14 @@
                             <td>" . $row["department"] . "</td>
                             <td>" . $row["username"] . "</td>
                             <td>
+
 								<a class='btn btn-primary btn-sm' href='update'><i class='bx bxs-edit'style='color:#780000' ></i></a>
                                 <a class='btn btn-danger btn-sm' href='delete'><i class='bx bxs-trash' style='color:#780000'  ></i></a>                            </td>
+
+                                <a class='addfaculty' name='addfaculty' href='edit.php?faculty_id=$row[faculty_id]'> Edit </a>
+                                <a class='btn btn-danger btn-sm' href='delete'>Delete</a>
+                            </td>
+
                         </tr>";
                     }
 
@@ -304,11 +335,9 @@
 
                 </tbody>
                 <!-- TABLE - LIST OF FACULTY end -->
-
-        </table>
-	
-	</div>
-  </section>  
+         </table>
+    </section>
+ 
     
     <!-- POPUP javascript -->
     <script>
@@ -323,15 +352,6 @@
             popup.classList.remove("open-popup");
         }
         
-        //edit account
-        let popupEdit = document.getElementById("popupEdit");
-        
-        function openPopupEdit(){
-            popupEdit.classList.add("open-popupEdit");
-        }
-        function closePopupEdit(){
-            popupEdit.classList.remove("open-popupEdit");
-        }
     
     </script>
     <!-- POPUP javascript end -->

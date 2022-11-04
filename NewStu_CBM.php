@@ -68,7 +68,7 @@
           <span class="link_name">New Student</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">New Student</a></li>
+          <li><a class="link_name" href="NewStu_CBM.php">New Student</a></li>
         </ul>
       </li>
 	   <li>
@@ -81,7 +81,7 @@
         </ul>
       </li>
 	  <li>
-        <a href="#">
+        <a href="admin_postAnnounce.php">
           <i class='bx bxs-microphone' ></i>
           <span class="link_name">Announcement</span>
         </a>
